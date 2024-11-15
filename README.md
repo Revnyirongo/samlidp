@@ -11,7 +11,7 @@ Using this service is free, but donations are welcome and will go towards furthe
 ## Requirements
 
 * VM with docker hosting environment
-* relational database service
+* relational database service (Postgres, MySQL etc)
 * logging service
 * smtp service
 * some persistent storage
