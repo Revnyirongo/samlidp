@@ -16,7 +16,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "php": "7.3.*",
@@ -27,18 +27,19 @@
         "symfony/swiftmailer-bundle": "^3.0",
         "symfony/monolog-bundle": "^2.8",
         "symfony/polyfill-apcu": "^1.0",
-        "sensio/distribution-bundle": "^5.0",
+        "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/user-bundle": "^2.0",
         "symfony/translation": "^3.1",
         "javiereguiluz/easyadmin-bundle": "^1.15",
         "symfony/assetic-bundle": "^2.8",
         "fortawesome/font-awesome": "^4.6",
         "twbs/bootstrap": "^3.3",
         "components/jquery": "^3.1",
-        "simplesamlphp/simplesamlphp": "^1.17.2",
-        "enyo/dropzone": "^4.3",
+        "simplesamlphp/simplesamlphp": "v1.17.8",
+        "simplesamlphp/saml2": "3.3.11",
+        "enyo/dropzone": "^5.7.3",
         "phpseclib/phpseclib": "^2.0",
         "datatables/datatables": "^1.10",
         "drmonty/datatables-plugins": "^1.10",
@@ -46,9 +47,9 @@
         "sonata-project/google-authenticator": "^1.0",
         "grimmlink/toastr": "^2.1",
         "oneup/uploader-bundle": "^1.7",
-        "portphp/portphp": "^1.0@dev",
-        "portphp/csv": "^1.0@dev",
-        "portphp/steps": "^1.0@dev",
+        "portphp/portphp": "1.0.0",
+        "portphp/csv": "1.0.0",
+        "portphp/steps": "1.0.0",
         "jms/serializer-bundle": "^1.1",
         "webfontkit/roboto": "^1.0",
         "webfontkit/open-sans": "^1.0",
@@ -56,11 +57,10 @@
         "oneup/flysystem-bundle": "^1.11",
         "league/flysystem-aws-s3-v3": "^1.0",
         "hanfrey/sparkpost-bundle": "dev-master",
-        "symfony/web-server-bundle": "^3.4",
-        "simplesamlphp/saml2": "3.3.11"
+        "symfony/web-server-bundle": "^3.4"
     },
     "require-dev": {
-        "sensio/generator-bundle": "^3.0",
+        "sensio/generator-bundle": "^3.1",
         "symfony/phpunit-bridge": "^3.0",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "doctrine/data-fixtures": "^1.0.0",
@@ -78,8 +78,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "php bin/console assetic:dump"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-install-cmd": [
             "@symfony-scripts"
@@ -87,6 +86,19 @@
         "post-update-cmd": [
             "@symfony-scripts"
         ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.3.33"
+        },
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     },
     "extra": {
         "symfony-app-dir": "app",
